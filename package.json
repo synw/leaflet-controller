@@ -1,6 +1,6 @@
 {
   "name": "leaflet-controller",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A stateful map controller for Leaflet",
   "repository": "https://github.com/synw/leaflet-controller",
   "scripts": {

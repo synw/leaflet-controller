@@ -87,9 +87,9 @@ interface MapController<T extends Record<string, any>> {
   /** Calculate the distance from given coordinates to the user position */
   distanceFromUser: (latlng: L.LatLng) => number;
   /** Set the on location found callback */
-  setLocate: (onLocationUpdate?: ((e: L.LocationEvent) => void) | undefined, onLocationError?: ((e: L.ErrorEvent) => void) | undefined) => void;
+  setLocate: (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: (e: L.ErrorEvent) => void) => void;
   /** Reset the location callback to default */
-  resetLocate: (onLocationUpdate?: ((e: L.LocationEvent) => void) | undefined, onLocationError?: () => void) => void;
+  resetLocate: (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: () => void) => void;
 }
 
 export {
