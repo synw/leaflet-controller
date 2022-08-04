@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "sourceMap": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    //"isolatedModules": true,
+    "outDir": "./dist",
+    "allowJs": true,
+    "removeComments": true,
+    "strictFunctionTypes": true,
+    "types": [
+      "vite/client",
+      "leaflet"
+    ],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "*": [
+        "src/*",
+        "node_modules/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "typedocOptions": {
+    "name": "Leaflet controller documentation",
+    //"readme": "README.md",
+    "entryPoints": [
+      "src/interfaces.ts",
+      "src/use_map_controller.ts",
+      "src/use_marker_controller.ts",
+      "src/use_marker_controller_group.ts",
+    ],
+    "out": "docs",
+  }
+}

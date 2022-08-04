@@ -1,0 +1,45 @@
+{
+  "name": "leaflet-controller",
+  "version": "0.0.1",
+  "description": "A stateful map controller for Leaflet",
+  "repository": "https://github.com/synw/leaflet-controller",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "docs": "typedoc --entryPointStrategy expand"
+  },
+  "dependencies": {
+    "@vue/reactivity": "^3.2.37"
+  },
+  "peerDependencies": {
+    "leaflet": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.7.11",
+    "@types/node": "^16.10.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.2",
+    "typedoc-plugin-markdown": "^3.13.2",
+    "typedoc-plugin-rename-defaults": "^0.6.1",
+    "typedoc": "^0.23.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/leaflet-controller.umd.js",
+  "module": "./dist/leaflet-controller.es.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/leaflet-controller.es.js",
+      "require": "./dist/leaflet-controller.umd.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "license": "MIT"
+}
