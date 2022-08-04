@@ -1,5 +1,7 @@
 # Leaflet controller
 
+[![package](https://img.shields.io/npm/v/leaflet-controller)](https://www.npmjs.com/package/leaflet-controller)
+
 A Typescript fiendly stateful map controller for Leaflet
 
 ## Install
