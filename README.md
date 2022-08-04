@@ -2,7 +2,7 @@
 
 [![package](https://img.shields.io/npm/v/leaflet-controller)](https://www.npmjs.com/package/leaflet-controller)
 
-A Typescript fiendly stateful map controller for Leaflet
+A Typescript friendly stateful map controller for Leaflet
 
 ## Install
 
@@ -181,6 +181,7 @@ To enable the user geolocation:
 
 ```typescript
 mapController.setMap({
+  // other parameters ...
   location: true,
   onLocationUpdate: (e) => console.log("Location update", e.latlng), // optional
 })
