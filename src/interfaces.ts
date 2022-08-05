@@ -56,7 +56,7 @@ interface LeafletControllerState {
 }
 
 /** The main map controller */
-interface MapController<T extends Record<string, any>> {
+interface MapController {
   /** The Leaflet map object */
   readonly map: L.Map;
   /** The reactive map state */

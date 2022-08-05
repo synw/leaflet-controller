@@ -2,7 +2,7 @@ import L from "leaflet";
 import { LeafletControllerState, MarkerController, SetMapParams, MarkerControllerGroup, MapController } from "./interfaces";
 
 /** Create a map controller */
-function useMapController<T extends Record<string, any>>(): MapController<T> {
+function useMapController(): MapController {
   /** The reactive map state */
   const state: LeafletControllerState = {
     zoom: 1,
