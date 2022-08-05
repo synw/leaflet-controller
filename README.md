@@ -161,13 +161,18 @@ mapController.setMap({
 ```
 
 It is possible to change the on location update callback. Example: calculate the distance
-from the user to a location and store it in a map controller custom property:
+from the user to a location and use it in a reactive Vue property:
 
 ```typescript
-//const controller = any MarkerController
+import L from "leaflet";
+import { reactive } from "@vue/reactivity";
+
+const point = markerController.marker.getLatLng();
+const geolocState = reactive({ distance: 0 });
 
 mapController.resetLocate((e) => {
-  mapController.props.distance = Math.trunc(mapController.distanceFromUser(controller.marker.getLatLng()))
+  // the map controller will update the prop everytime a location update occurs
+  geolocState.distance = Math.trunc(mapController.distanceFromUser(point))
 })
 ```
 
