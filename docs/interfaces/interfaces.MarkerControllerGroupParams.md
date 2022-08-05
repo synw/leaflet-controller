@@ -19,7 +19,7 @@
 
 #### Defined in
 
-src/interfaces.ts:36
+[interfaces.ts:34](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L34)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:35
+[interfaces.ts:33](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L33)

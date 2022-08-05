@@ -28,4 +28,4 @@ Create a map controller
 
 #### Defined in
 
-src/use_map_controller.ts:6
+[use_map_controller.ts:5](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/use_map_controller.ts#L5)

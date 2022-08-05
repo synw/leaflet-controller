@@ -12,4 +12,4 @@
 - [MarkerControllerGroup](../interfaces/interfaces.MarkerControllerGroup.md)
 - [MarkerControllerGroupParams](../interfaces/interfaces.MarkerControllerGroupParams.md)
 - [MarkerControllerParams](../interfaces/interfaces.MarkerControllerParams.md)
-- [UseLeafletControllerParams](../interfaces/interfaces.UseLeafletControllerParams.md)
+- [SetMapParams](../interfaces/interfaces.SetMapParams.md)

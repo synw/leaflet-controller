@@ -38,7 +38,7 @@ mapController.setMap({
   })
 ```
 
-Documentation of the [parameters](docs/interfaces/interfaces.UseLeafletControllerParams.md)
+Documentation of the [parameters](docs/interfaces/interfaces.SetMapParams.md)
 
 #### Map methods
 
@@ -146,34 +146,7 @@ mapController.removeGroup("group_id")
 
 ### The map state
 
-The map controller provides a reactive object that holds the map state [doc](docs/interfaces/interfaces.LeafletControllerState.md)
-
-### The map properties
-
-It is possible to declare custom properties when initializing the controller. First define an interface
-that describes the custom properties:
-
-```typescript
-interface MapControllerProps {
-  distance: number;
-}
-```
-
-Then initialize the map with this properties type:
-
-```typescript
-const mapController = useMapController<MapControllerProps>();
-mapController.setMap({
-  // other parameters ...
-  properties: { distance: 0 }
-})
-```
-
-The custom properties are reactive. To access them:
-
-```typescript
-const distance = mapController.props.distance
-```
+The map controller provides an object that holds the map state [doc](docs/interfaces/interfaces.LeafletControllerState.md)
 
 ### Geolocation features
 

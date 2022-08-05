@@ -22,7 +22,6 @@ The main map controller
 - [distanceFromUser](interfaces.MapController.md#distancefromuser)
 - [fitUserLatlng](interfaces.MapController.md#fituserlatlng)
 - [map](interfaces.MapController.md#map)
-- [props](interfaces.MapController.md#props)
 - [removeGroup](interfaces.MapController.md#removegroup)
 - [removeMarkerController](interfaces.MapController.md#removemarkercontroller)
 - [resetLocate](interfaces.MapController.md#resetlocate)
@@ -56,7 +55,7 @@ Add a marker controller group
 
 #### Defined in
 
-src/interfaces.ts:82
+[interfaces.ts:78](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L78)
 
 ___
 
@@ -82,7 +81,7 @@ Add a marker controller
 
 #### Defined in
 
-src/interfaces.ts:78
+[interfaces.ts:74](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L74)
 
 ___
 
@@ -102,7 +101,7 @@ Remove all marker controller groups
 
 #### Defined in
 
-src/interfaces.ts:74
+[interfaces.ts:70](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L70)
 
 ___
 
@@ -128,7 +127,7 @@ Calculate the distance from given coordinates to the user position
 
 #### Defined in
 
-src/interfaces.ts:88
+[interfaces.ts:84](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L84)
 
 ___
 
@@ -154,7 +153,7 @@ Fit bounds for given coordinates and user position
 
 #### Defined in
 
-src/interfaces.ts:86
+[interfaces.ts:82](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L82)
 
 ___
 
@@ -166,19 +165,7 @@ The Leaflet map object
 
 #### Defined in
 
-src/interfaces.ts:64
-
-___
-
-### props
-
-• `Readonly` **props**: `UnwrapNestedRefs`<`T`\>
-
-The reactive controller properties
-
-#### Defined in
-
-src/interfaces.ts:68
+[interfaces.ts:62](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L62)
 
 ___
 
@@ -204,7 +191,7 @@ Remove a marker controller group
 
 #### Defined in
 
-src/interfaces.ts:84
+[interfaces.ts:80](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L80)
 
 ___
 
@@ -230,7 +217,7 @@ Remove a marker controller
 
 #### Defined in
 
-src/interfaces.ts:80
+[interfaces.ts:76](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L76)
 
 ___
 
@@ -257,7 +244,7 @@ Reset the location callback to default
 
 #### Defined in
 
-src/interfaces.ts:92
+[interfaces.ts:88](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L88)
 
 ___
 
@@ -277,7 +264,7 @@ Reset the map to it's initial state: center and zoom and clear all items on map
 
 #### Defined in
 
-src/interfaces.ts:76
+[interfaces.ts:72](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L72)
 
 ___
 
@@ -297,7 +284,7 @@ Trigger a map resize
 
 #### Defined in
 
-src/interfaces.ts:72
+[interfaces.ts:68](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L68)
 
 ___
 
@@ -324,13 +311,13 @@ Set the on location found callback
 
 #### Defined in
 
-src/interfaces.ts:90
+[interfaces.ts:86](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L86)
 
 ___
 
 ### setMap
 
-• **setMap**: (`params`: [`UseLeafletControllerParams`](interfaces.UseLeafletControllerParams.md)<`T`\>) => `void`
+• **setMap**: (`params`: [`SetMapParams`](interfaces.SetMapParams.md)) => `void`
 
 #### Type declaration
 
@@ -342,7 +329,7 @@ Initialize the map
 
 | Name | Type |
 | :------ | :------ |
-| `params` | [`UseLeafletControllerParams`](interfaces.UseLeafletControllerParams.md)<`T`\> |
+| `params` | [`SetMapParams`](interfaces.SetMapParams.md) |
 
 ##### Returns
 
@@ -350,27 +337,16 @@ Initialize the map
 
 #### Defined in
 
-src/interfaces.ts:70
+[interfaces.ts:66](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L66)
 
 ___
 
 ### state
 
-• `Readonly` **state**: `Object`
+• **state**: [`LeafletControllerState`](interfaces.LeafletControllerState.md)
 
 The reactive map state
 
-#### Type declaration
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `canGeolocate` | `boolean` | Can the controller use the user geolocation features |
-| `groups` | `Record`<`string`, [`MarkerControllerGroup`](interfaces.MarkerControllerGroup.md)\> | The [MarkerControllerGroup](interfaces.MarkerControllerGroup.md) groups present on the map |
-| `isReady` | `boolean` | The map ready state |
-| `markers` | `Record`<`string`, [`MarkerController`](interfaces.MarkerController.md)\> | The [MarkerController](interfaces.MarkerController.md) groups present on the map |
-| `userPosition` | ``null`` \| { latlng: { equals: (otherLatLng: LatLngExpression, maxMargin?: number \| undefined) =\> boolean; toString: () =\> string; distanceTo: (otherLatLng: LatLngExpression) =\> number; ... 5 more ...; alt?: number \| undefined; }; ... 12 more ...; layer: any; } | The current user position |
-| `zoom` | `number` | The current zoom level |
-
 #### Defined in
 
-src/interfaces.ts:66
+[interfaces.ts:64](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L64)

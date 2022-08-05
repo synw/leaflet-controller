@@ -34,4 +34,4 @@ Create a marker controller group
 
 #### Defined in
 
-src/use_marker_controller_group.ts:5
+[use_marker_controller_group.ts:5](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/use_marker_controller_group.ts#L5)

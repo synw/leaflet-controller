@@ -23,7 +23,7 @@
 
 #### Defined in
 
-src/interfaces.ts:19
+[interfaces.ts:17](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L17)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:22
+[interfaces.ts:20](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L20)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:18
+[interfaces.ts:16](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L16)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:20
+[interfaces.ts:18](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L18)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:17
+[interfaces.ts:15](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L15)
 
 ___
 
@@ -73,4 +73,4 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:21
+[interfaces.ts:19](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L19)

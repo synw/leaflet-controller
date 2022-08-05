@@ -27,7 +27,7 @@ Can the controller use the user geolocation features
 
 #### Defined in
 
-src/interfaces.ts:56
+[interfaces.ts:54](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L54)
 
 ___
 
@@ -39,7 +39,7 @@ The [MarkerControllerGroup](interfaces.MarkerControllerGroup.md) groups present 
 
 #### Defined in
 
-src/interfaces.ts:50
+[interfaces.ts:48](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L48)
 
 ___
 
@@ -51,7 +51,7 @@ The map ready state
 
 #### Defined in
 
-src/interfaces.ts:54
+[interfaces.ts:52](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L52)
 
 ___
 
@@ -63,7 +63,7 @@ The [MarkerController](interfaces.MarkerController.md) groups present on the map
 
 #### Defined in
 
-src/interfaces.ts:52
+[interfaces.ts:50](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L50)
 
 ___
 
@@ -75,7 +75,7 @@ The current user position
 
 #### Defined in
 
-src/interfaces.ts:58
+[interfaces.ts:56](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L56)
 
 ___
 
@@ -87,4 +87,4 @@ The current zoom level
 
 #### Defined in
 
-src/interfaces.ts:48
+[interfaces.ts:46](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L46)

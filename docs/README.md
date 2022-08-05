@@ -2,9 +2,14 @@ Leaflet controller documentation / [Modules](modules.md)
 
 # Leaflet controller
 
-A Typescript fiendly stateful map controller for Leaflet
+[![package](https://img.shields.io/npm/v/leaflet-controller)](https://www.npmjs.com/package/leaflet-controller)
+
+A Typescript friendly stateful map controller for Leaflet
 
 ## Install
+
+Install [Leaflet](https://leafletjs.com/) first or use your already installed version
+and install the map controller:
 
 ```
 npm install leaflet-controller
@@ -12,13 +17,11 @@ npm install leaflet-controller
 yarn add leaflet-controller
 ```
 
-Read the [documentation](docs/modules.md)
-
 ## Usage
 
 ### Map controller
 
-Create a map controller [doc](docs/modules.md#usemapcontroller):
+Create a map controller [doc](docs/modules/use_map_controller.md):
 
 ```typescript
 import { useMapController} from "leaflet-controller";
@@ -37,7 +40,7 @@ mapController.setMap({
   })
 ```
 
-Documentation of the [parameters](docs/interfaces/UseLeafletControllerParams.md)
+Documentation of the [parameters](docs/interfaces/interfaces.SetMapParams.md)
 
 #### Map methods
 
@@ -58,7 +61,7 @@ Documentation of the [parameters](docs/interfaces/UseLeafletControllerParams.md)
 
 ### Marker controller
 
-A controller to manage a map marker [doc](docs/interfaces/MarkerController.md). Create a marker:
+A controller to manage a map marker [doc](docs/interfaces/interfaces.MarkerController.md). Create a marker:
 
 ```typescript
 import { useMarkerController } from "leaflet-controller";
@@ -126,7 +129,15 @@ const group = useMarkerControllerGroup({
 Push the group on the map:
 
 ```typescript
-mapController.addGroup(subcat.name, group)
+mapController.addGroup(group)
+```
+
+Access the group features:
+
+```typescript
+import L from "leaflet";
+
+const features: L.FeatureGroup = mapController.state.groups["group_id"].features
 ```
 
 Remove the group from the map:
@@ -137,34 +148,7 @@ mapController.removeGroup("group_id")
 
 ### The map state
 
-The map controller provides a reactive object that holds the map state [doc](docs/interfaces/LeafletControllerState.md)
-
-### The map properties
-
-It is possible to declare custom properties when initializing the controller. First define an interface
-that describes the custom properties:
-
-```typescript
-interface MapControllerProps {
-  distance: number;
-}
-```
-
-Then initialize the map with this properties type:
-
-```typescript
-const mapController = useMapController<MapControllerProps>();
-mapController.setMap({
-  // other parameters ...
-  properties: { distance: 0 }
-})
-```
-
-The custom properties are reactive. To access them:
-
-```typescript
-const distance = mapController.props.distance
-```
+The map controller provides an object that holds the map state [doc](docs/interfaces/interfaces.LeafletControllerState.md)
 
 ### Geolocation features
 
@@ -172,7 +156,19 @@ To enable the user geolocation:
 
 ```typescript
 mapController.setMap({
+  // other parameters ...
   location: true,
   onLocationUpdate: (e) => console.log("Location update", e.latlng), // optional
+})
+```
+
+It is possible to change the on location update callback. Example: calculate the distance
+from the user to a location and store it in a map controller custom property:
+
+```typescript
+//const controller = any MarkerController
+
+mapController.resetLocate((e) => {
+  mapController.props.distance = Math.trunc(mapController.distanceFromUser(controller.marker.getLatLng()))
 })
 ```

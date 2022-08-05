@@ -20,7 +20,7 @@
 
 #### Defined in
 
-src/interfaces.ts:41
+[interfaces.ts:39](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L39)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:42
+[interfaces.ts:40](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L40)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-src/interfaces.ts:40
+[interfaces.ts:38](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L38)
