@@ -1,8 +1,6 @@
-import { UnwrapNestedRefs } from "@vue/reactivity";
 import L from "leaflet";
 
-
-interface UseLeafletControllerParams<T extends Record<string, any>> {
+interface SetMapParams {
   container: string;
   center: L.LatLngExpression;
   zoom: number;
@@ -10,7 +8,6 @@ interface UseLeafletControllerParams<T extends Record<string, any>> {
   options?: L.MapOptions;
   location?: boolean;
   onLocationUpdate?: (e: L.LocationEvent) => void;
-  properties?: T;
 }
 
 interface MarkerControllerParams {
@@ -63,11 +60,9 @@ interface MapController<T extends Record<string, any>> {
   /** The Leaflet map object */
   readonly map: L.Map;
   /** The reactive map state */
-  readonly state: UnwrapNestedRefs<LeafletControllerState>;
-  /** The reactive controller properties */
-  readonly props: UnwrapNestedRefs<T>;
+  state: LeafletControllerState;
   /** Initialize the map */
-  setMap: (params: UseLeafletControllerParams<T>) => void;
+  setMap: (params: SetMapParams) => void;
   /** Trigger a map resize */
   resize: () => void;
   /** Remove all marker controller groups */
@@ -94,7 +89,7 @@ interface MapController<T extends Record<string, any>> {
 
 export {
   LeafletControllerState,
-  UseLeafletControllerParams,
+  SetMapParams,
   MarkerControllerParams,
   MarkerController,
   MarkerControllerGroupParams,

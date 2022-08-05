@@ -1,19 +1,17 @@
 import L from "leaflet";
-import { reactive, UnwrapNestedRefs } from "@vue/reactivity";
-import { LeafletControllerState, MarkerController, UseLeafletControllerParams, MarkerControllerGroup, MapController } from "./interfaces";
+import { LeafletControllerState, MarkerController, SetMapParams, MarkerControllerGroup, MapController } from "./interfaces";
 
 /** Create a map controller */
 function useMapController<T extends Record<string, any>>(): MapController<T> {
   /** The reactive map state */
-  const state: UnwrapNestedRefs<LeafletControllerState> = reactive<LeafletControllerState>({
+  const state: LeafletControllerState = {
     zoom: 1,
     groups: {},
     markers: {},
     isReady: false,
     canGeolocate: false,
     userPosition: null,
-  });
-  let _props: UnwrapNestedRefs<T> = reactive({} as T);
+  };
   // internal state
   let _positionMarker: L.Marker | L.CircleMarker = L.circleMarker([0, 0]);
   let _initialCenter: L.LatLngExpression = [0, 0];
@@ -69,12 +67,9 @@ function useMapController<T extends Record<string, any>>(): MapController<T> {
     setTimeout(setSize, 0);
   }
 
-  const setMap = (params: UseLeafletControllerParams<T>) => {
+  const setMap = (params: SetMapParams) => {
     state.isReady = false;
-    // set props and initial stuff
-    if (params.properties) {
-      _props = reactive(params.properties)
-    }
+    // set initial stuff
     _initialCenter = params.center;
     _initialZoom = params.zoom;
     if (params.tileLayer) {
@@ -159,10 +154,6 @@ function useMapController<T extends Record<string, any>>(): MapController<T> {
     /** The Leaflet map */
     get map(): L.Map {
       return _map
-    },
-    /** User defined reactive controller properties */
-    get props(): typeof _props {
-      return _props
     },
     /** The map state */
     state,

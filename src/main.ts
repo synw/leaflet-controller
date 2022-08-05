@@ -1,6 +1,6 @@
 import {
   LeafletControllerState,
-  UseLeafletControllerParams,
+  SetMapParams,
   MarkerControllerParams,
   MarkerController,
   MarkerControllerGroupParams,
@@ -12,7 +12,7 @@ import useMarkerControllerGroup from "./use_marker_controller_group";
 
 export {
   LeafletControllerState,
-  UseLeafletControllerParams,
+  SetMapParams,
   MarkerControllerParams,
   MarkerController,
   MarkerControllerGroupParams,
