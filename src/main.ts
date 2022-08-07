@@ -3,21 +3,31 @@ import {
   SetMapParams,
   MarkerControllerParams,
   MarkerController,
-  MarkerControllerGroupParams,
-  MarkerControllerGroup
+  ControllerGroupParams,
+  ControllerGroup,
+  PolylineControllerParams,
+  PolygonControllerParams,
+  ControllerType,
 } from "./interfaces";
 import useMapController from "./use_map_controller";
 import useMarkerController from "./use_marker_controller";
-import useMarkerControllerGroup from "./use_marker_controller_group";
+import useControllerGroup from "./use_controller_group";
+import usePolylineController from "./use_polyline_controller";
+import usePolygonController from "./use_polygon_controller";
 
 export {
   LeafletControllerState,
   SetMapParams,
   MarkerControllerParams,
   MarkerController,
-  MarkerControllerGroupParams,
-  MarkerControllerGroup,
+  ControllerGroupParams,
+  ControllerGroup,
+  PolylineControllerParams,
+  PolygonControllerParams,
+  ControllerType,
   useMapController,
   useMarkerController,
-  useMarkerControllerGroup
+  useControllerGroup,
+  usePolylineController,
+  usePolygonController,
 }

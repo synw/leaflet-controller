@@ -4,6 +4,7 @@ import { MarkerController, MarkerControllerParams } from "./interfaces";
 /** Create a marker controller */
 const useMarkerController = (params: MarkerControllerParams): MarkerController => {
   const name = params.name;
+  const type = "marker";
   let _iconOptions = Object.assign({}, params.iconOptions);
   const icon = L.divIcon(params.iconOptions);
   let _markerOptions = params.markerOptions ?? {};
@@ -45,6 +46,7 @@ const useMarkerController = (params: MarkerControllerParams): MarkerController =
 
   return {
     name,
+    type,
     marker,
     cls,
     addToCls,

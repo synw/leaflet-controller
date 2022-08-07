@@ -1,5 +1,5 @@
 import L from "leaflet";
-import { LeafletControllerState, MarkerController, SetMapParams, MarkerControllerGroup, MapController } from "./interfaces";
+import { LeafletControllerState, MarkerController, SetMapParams, ControllerGroup, MapController, PolylineController, PolygonController } from "./interfaces";
 
 /** Create a map controller */
 function useMapController(): MapController {
@@ -8,6 +8,8 @@ function useMapController(): MapController {
     zoom: 1,
     groups: {},
     markers: {},
+    polylines: {},
+    polygons: {},
     isReady: false,
     canGeolocate: false,
     userPosition: null,
@@ -36,7 +38,7 @@ function useMapController(): MapController {
     //console.log("Location error", e.message)
   }
 
-  const setLocate = (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: (e: L.ErrorEvent) => void) => {
+  const _setLocate = (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: (e: L.ErrorEvent) => void) => {
     _map.on('locationfound', (e) => {
       state.userPosition = e;
       state.canGeolocate = true;
@@ -57,9 +59,9 @@ function useMapController(): MapController {
     });
   }
 
-  const resetLocate = (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: () => void) => {
+  const setLocate = (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: (e: L.ErrorEvent) => void) => {
     _map.stopLocate();
-    setLocate(onLocationUpdate, onLocationError);
+    _setLocate(onLocationUpdate, onLocationError);
   }
 
   const resize = () => {
@@ -83,12 +85,12 @@ function useMapController(): MapController {
       state.isReady = true;
       if (params.location === true) {
         state.canGeolocate = true;
-        setLocate(params.onLocationUpdate)
+        _setLocate(params.onLocationUpdate)
       }
     });
   }
 
-  const addGroup = (group: MarkerControllerGroup) => {
+  const addGroup = (group: ControllerGroup) => {
     if (group.name in state.groups) {
       throw new Error(`Group ${group.name} already present in _map controller state`)
     }
@@ -115,10 +117,42 @@ function useMapController(): MapController {
 
   const removeMarkerController = (name: string) => {
     if (!Object.keys(state.markers).includes(name)) {
-      throw new Error(`Marker key ${name} not found in _map controller state`)
+      throw new Error(`Marker key ${name} not found in map controller state`)
     }
     state.markers[name].marker.removeFrom(_map);
     delete state.markers[name]
+  }
+
+  const addPolylineController = (c: PolylineController) => {
+    if (Object.keys(state.polylines).includes(c.name)) {
+      throw new Error(`Polyline key ${c.name} already present in map controller state`)
+    }
+    state.polylines[c.name] = c;
+    c.polyline.addTo(_map)
+  }
+
+  const removePolylineController = (name: string) => {
+    if (!Object.keys(state.polylines).includes(name)) {
+      throw new Error(`Polyline key ${name} not found in map controller state`)
+    }
+    state.polylines[name].polyline.removeFrom(_map);
+    delete state.polylines[name]
+  }
+
+  const addPolygonController = (c: PolygonController) => {
+    if (Object.keys(state.polygons).includes(c.name)) {
+      throw new Error(`Polygon key ${c.name} already present in map controller state`)
+    }
+    state.polygons[c.name] = c;
+    c.polygon.addTo(_map)
+  }
+
+  const removePolygonController = (name: string) => {
+    if (!Object.keys(state.polygons).includes(name)) {
+      throw new Error(`Polygon key ${name} not found in map controller state`)
+    }
+    state.polygons[name].polygon.removeFrom(_map);
+    delete state.polygons[name]
   }
 
   const fitUserLatlng = (latlng: L.LatLngTuple) => {
@@ -151,35 +185,24 @@ function useMapController(): MapController {
   }
 
   return {
-    /** The Leaflet map */
     get map(): L.Map {
       return _map
     },
-    /** The map state */
     state,
-    /** Initialize the map */
     setMap,
-    /** Trigger a map resize */
     resize,
-    /** Reset the map to it's initial state: center and zoom and clear all items on map */
     resetMap,
-    /** Add a marker controller */
     addMarkerController,
-    /** Remove a marker controller */
     removeMarkerController,
-    /** Add a marker controller group */
+    addPolylineController,
+    removePolylineController,
+    addPolygonController,
+    removePolygonController,
     addGroup,
-    /** Remove a marker controller group */
     removeGroup,
-    /** Remove all marker controller groups */
     clearMapGroups,
-    /** Set the on location found callback */
     setLocate,
-    /** Reset the location callback */
-    resetLocate,
-    /** Fit bounds for given coordinates and user position */
     fitUserLatlng,
-    /** Calculate the distance from given coordinates to the user position */
     distanceFromUser,
   }
 }

@@ -10,6 +10,13 @@ interface SetMapParams {
   onLocationUpdate?: (e: L.LocationEvent) => void;
 }
 
+type ControllerType = "marker" | "polyline" | "polygon";
+
+interface BaseController {
+  name: string;
+  type: ControllerType;
+}
+
 interface MarkerControllerParams {
   name: string;
   latlng: L.LatLngExpression;
@@ -19,8 +26,7 @@ interface MarkerControllerParams {
   iconSvg?: string;
 }
 
-interface MarkerController {
-  name: string;
+interface MarkerController extends BaseController {
   marker: L.Marker | L.CircleMarker;
   cls: (cls: string) => void;
   addToCls: (cls: string) => void;
@@ -28,25 +34,51 @@ interface MarkerController {
   addToSvgCls: (cls: string) => void;
 }
 
-interface MarkerControllerGroupParams {
+interface PolylineControllerParams {
   name: string;
-  controllers: Record<string, MarkerController>;
+  polyline: L.Polyline;
 }
 
-interface MarkerControllerGroup {
+interface PolylineController extends BaseController {
+  polyline: L.Polyline;
+}
+
+interface PolygonControllerParams {
   name: string;
-  controllers: Record<string, MarkerController>;
+  polygon: L.Polygon;
+}
+
+interface PolygonController extends BaseController {
+  name: string;
+  polygon: L.Polygon;
+}
+
+interface ControllerGroupParams {
+  name: string;
+  controllers: Record<string, MarkerController | PolylineController | PolygonController>;
+}
+
+interface ControllerGroup {
+  name: string;
+  controllers: Record<string, MarkerController | PolylineController | PolygonController>;
   features: L.FeatureGroup;
+  readonly markerControllers: Record<string, MarkerController>;
+  readonly polylineControllers: Record<string, PolylineController>;
+  readonly polygonControllers: Record<string, PolygonController>;
 }
 
 /** The map state */
 interface LeafletControllerState {
   /** The current zoom level */
   zoom: number;
-  /** The {@link MarkerControllerGroup} groups present on the map */
-  groups: Record<string, MarkerControllerGroup>;
-  /** The {@link MarkerController} groups present on the map */
+  /** The {@link ControllerGroup} groups present on the map */
+  groups: Record<string, ControllerGroup>;
+  /** The {@link MarkerController} present on the map */
   markers: Record<string, MarkerController>;
+  /** The {@link PolylineController}  present on the map */
+  polylines: Record<string, PolylineController>;
+  /** The {@link PolygonController} present on the map */
+  polygons: Record<string, PolygonController>;
   /** The map ready state */
   isReady: boolean;
   /** Can the controller use the user geolocation features */
@@ -73,18 +105,24 @@ interface MapController {
   addMarkerController: (c: MarkerController) => void;
   /** Remove a marker controller */
   removeMarkerController: (name: string) => void;
+  /** Add a polyline controller */
+  addPolylineController: (c: PolylineController) => void
+  /** Remove a polyline controller */
+  removePolylineController: (name: string) => void
+  /** Add a polygon controller */
+  addPolygonController: (c: PolygonController) => void
+  /** Remove a polygon controller */
+  removePolygonController: (name: string) => void
   /** Add a marker controller group */
-  addGroup: (group: MarkerControllerGroup) => void;
+  addGroup: (group: ControllerGroup) => void;
   /** Remove a marker controller group */
   removeGroup: (name: string) => void;
   /** Fit bounds for given coordinates and user position */
   fitUserLatlng: (latlng: L.LatLngTuple) => void;
   /** Calculate the distance from given coordinates to the user position */
   distanceFromUser: (latlng: L.LatLng) => number;
-  /** Set the on location found callback */
+  /** Set the on location update callback */
   setLocate: (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: (e: L.ErrorEvent) => void) => void;
-  /** Reset the location callback to default */
-  resetLocate: (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: () => void) => void;
 }
 
 export {
@@ -92,7 +130,12 @@ export {
   SetMapParams,
   MarkerControllerParams,
   MarkerController,
-  MarkerControllerGroupParams,
-  MarkerControllerGroup,
+  ControllerGroupParams,
+  ControllerGroup,
   MapController,
+  PolylineControllerParams,
+  PolylineController,
+  PolygonControllerParams,
+  PolygonController,
+  ControllerType,
 }
