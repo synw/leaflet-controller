@@ -48,7 +48,9 @@
       "src/interfaces.ts",
       "src/use_map_controller.ts",
       "src/use_marker_controller.ts",
-      "src/use_marker_controller_group.ts",
+      "src/use_polyline_controller.ts",
+      "src/use_polygon_controller.ts",
+      "src/use_controller_group.ts",
     ],
     "out": "docs",
   }
