@@ -1,16 +1,10 @@
 [Leaflet controller documentation](../README.md) / [Modules](../modules.md) / [interfaces](../modules/interfaces.md) / MapController
 
-# Interface: MapController<T\>
+# Interface: MapController
 
 [interfaces](../modules/interfaces.md).MapController
 
 The main map controller
-
-## Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `Record`<`string`, `any`\> |
 
 ## Table of contents
 
@@ -18,12 +12,16 @@ The main map controller
 
 - [addGroup](interfaces.MapController.md#addgroup)
 - [addMarkerController](interfaces.MapController.md#addmarkercontroller)
+- [addPolygonController](interfaces.MapController.md#addpolygoncontroller)
+- [addPolylineController](interfaces.MapController.md#addpolylinecontroller)
 - [clearMapGroups](interfaces.MapController.md#clearmapgroups)
 - [distanceFromUser](interfaces.MapController.md#distancefromuser)
 - [fitUserLatlng](interfaces.MapController.md#fituserlatlng)
 - [map](interfaces.MapController.md#map)
 - [removeGroup](interfaces.MapController.md#removegroup)
 - [removeMarkerController](interfaces.MapController.md#removemarkercontroller)
+- [removePolygonController](interfaces.MapController.md#removepolygoncontroller)
+- [removePolylineController](interfaces.MapController.md#removepolylinecontroller)
 - [resetLocate](interfaces.MapController.md#resetlocate)
 - [resetMap](interfaces.MapController.md#resetmap)
 - [resize](interfaces.MapController.md#resize)
@@ -35,7 +33,7 @@ The main map controller
 
 ### addGroup
 
-• **addGroup**: (`group`: [`MarkerControllerGroup`](interfaces.MarkerControllerGroup.md)) => `void`
+• **addGroup**: (`group`: [`ControllerGroup`](interfaces.ControllerGroup.md)) => `void`
 
 #### Type declaration
 
@@ -47,7 +45,7 @@ Add a marker controller group
 
 | Name | Type |
 | :------ | :------ |
-| `group` | [`MarkerControllerGroup`](interfaces.MarkerControllerGroup.md) |
+| `group` | [`ControllerGroup`](interfaces.ControllerGroup.md) |
 
 ##### Returns
 
@@ -55,7 +53,7 @@ Add a marker controller group
 
 #### Defined in
 
-[interfaces.ts:78](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L78)
+[interfaces.ts:117](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L117)
 
 ___
 
@@ -81,7 +79,59 @@ Add a marker controller
 
 #### Defined in
 
-[interfaces.ts:74](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L74)
+[interfaces.ts:105](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L105)
+
+___
+
+### addPolygonController
+
+• **addPolygonController**: (`c`: [`PolygonController`](interfaces.PolygonController.md)) => `void`
+
+#### Type declaration
+
+▸ (`c`): `void`
+
+Add a polygon controller
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `c` | [`PolygonController`](interfaces.PolygonController.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[interfaces.ts:113](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L113)
+
+___
+
+### addPolylineController
+
+• **addPolylineController**: (`c`: [`PolylineController`](interfaces.PolylineController.md)) => `void`
+
+#### Type declaration
+
+▸ (`c`): `void`
+
+Add a polyline controller
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `c` | [`PolylineController`](interfaces.PolylineController.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[interfaces.ts:109](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L109)
 
 ___
 
@@ -101,7 +151,7 @@ Remove all marker controller groups
 
 #### Defined in
 
-[interfaces.ts:70](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L70)
+[interfaces.ts:101](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L101)
 
 ___
 
@@ -127,7 +177,7 @@ Calculate the distance from given coordinates to the user position
 
 #### Defined in
 
-[interfaces.ts:84](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L84)
+[interfaces.ts:123](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L123)
 
 ___
 
@@ -153,7 +203,7 @@ Fit bounds for given coordinates and user position
 
 #### Defined in
 
-[interfaces.ts:82](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L82)
+[interfaces.ts:121](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L121)
 
 ___
 
@@ -165,7 +215,7 @@ The Leaflet map object
 
 #### Defined in
 
-[interfaces.ts:62](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L62)
+[interfaces.ts:93](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L93)
 
 ___
 
@@ -191,7 +241,7 @@ Remove a marker controller group
 
 #### Defined in
 
-[interfaces.ts:80](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L80)
+[interfaces.ts:119](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L119)
 
 ___
 
@@ -217,7 +267,59 @@ Remove a marker controller
 
 #### Defined in
 
-[interfaces.ts:76](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L76)
+[interfaces.ts:107](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L107)
+
+___
+
+### removePolygonController
+
+• **removePolygonController**: (`name`: `string`) => `void`
+
+#### Type declaration
+
+▸ (`name`): `void`
+
+Remove a polygon controller
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[interfaces.ts:115](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L115)
+
+___
+
+### removePolylineController
+
+• **removePolylineController**: (`name`: `string`) => `void`
+
+#### Type declaration
+
+▸ (`name`): `void`
+
+Remove a polyline controller
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[interfaces.ts:111](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L111)
 
 ___
 
@@ -244,7 +346,7 @@ Reset the location callback to default
 
 #### Defined in
 
-[interfaces.ts:88](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L88)
+[interfaces.ts:127](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L127)
 
 ___
 
@@ -264,7 +366,7 @@ Reset the map to it's initial state: center and zoom and clear all items on map
 
 #### Defined in
 
-[interfaces.ts:72](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L72)
+[interfaces.ts:103](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L103)
 
 ___
 
@@ -284,7 +386,7 @@ Trigger a map resize
 
 #### Defined in
 
-[interfaces.ts:68](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L68)
+[interfaces.ts:99](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L99)
 
 ___
 
@@ -311,7 +413,7 @@ Set the on location found callback
 
 #### Defined in
 
-[interfaces.ts:86](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L86)
+[interfaces.ts:125](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L125)
 
 ___
 
@@ -337,7 +439,7 @@ Initialize the map
 
 #### Defined in
 
-[interfaces.ts:66](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L66)
+[interfaces.ts:97](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L97)
 
 ___
 
@@ -349,4 +451,4 @@ The reactive map state
 
 #### Defined in
 
-[interfaces.ts:64](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L64)
+[interfaces.ts:95](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L95)

@@ -4,6 +4,12 @@
 
 [interfaces](../modules/interfaces.md).MarkerController
 
+## Hierarchy
+
+- `BaseController`
+
+  ↳ **`MarkerController`**
+
 ## Table of contents
 
 ### Properties
@@ -14,6 +20,7 @@
 - [marker](interfaces.MarkerController.md#marker)
 - [name](interfaces.MarkerController.md#name)
 - [svgCls](interfaces.MarkerController.md#svgcls)
+- [type](interfaces.MarkerController.md#type)
 
 ## Properties
 
@@ -37,7 +44,7 @@
 
 #### Defined in
 
-[interfaces.ts:27](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L27)
+[interfaces.ts:32](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L32)
 
 ___
 
@@ -61,7 +68,7 @@ ___
 
 #### Defined in
 
-[interfaces.ts:29](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L29)
+[interfaces.ts:34](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L34)
 
 ___
 
@@ -85,7 +92,7 @@ ___
 
 #### Defined in
 
-[interfaces.ts:26](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L26)
+[interfaces.ts:31](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L31)
 
 ___
 
@@ -95,7 +102,7 @@ ___
 
 #### Defined in
 
-[interfaces.ts:25](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L25)
+[interfaces.ts:30](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L30)
 
 ___
 
@@ -103,9 +110,13 @@ ___
 
 • **name**: `string`
 
+#### Inherited from
+
+BaseController.name
+
 #### Defined in
 
-[interfaces.ts:24](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L24)
+[interfaces.ts:16](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L16)
 
 ___
 
@@ -129,4 +140,18 @@ ___
 
 #### Defined in
 
-[interfaces.ts:28](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L28)
+[interfaces.ts:33](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L33)
+
+___
+
+### type
+
+• **type**: [`ControllerType`](../modules/interfaces.md#controllertype)
+
+#### Inherited from
+
+BaseController.type
+
+#### Defined in
+
+[interfaces.ts:17](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L17)

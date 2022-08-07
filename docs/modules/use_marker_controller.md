@@ -28,4 +28,4 @@ Create a marker controller
 
 #### Defined in
 
-[use_marker_controller.ts:5](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/use_marker_controller.ts#L5)
+[use_marker_controller.ts:5](https://github.com/synw/leaflet-controller/blob/653db9e/src/use_marker_controller.ts#L5)

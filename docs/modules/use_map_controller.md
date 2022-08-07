@@ -12,20 +12,14 @@
 
 ### useMapController
 
-▸ **useMapController**<`T`\>(): [`MapController`](../interfaces/interfaces.MapController.md)<`T`\>
+▸ **useMapController**(): [`MapController`](../interfaces/interfaces.MapController.md)
 
 Create a map controller
 
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `Record`<`string`, `any`\> |
-
 #### Returns
 
-[`MapController`](../interfaces/interfaces.MapController.md)<`T`\>
+[`MapController`](../interfaces/interfaces.MapController.md)
 
 #### Defined in
 
-[use_map_controller.ts:5](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/use_map_controller.ts#L5)
+[use_map_controller.ts:5](https://github.com/synw/leaflet-controller/blob/653db9e/src/use_map_controller.ts#L5)

@@ -14,6 +14,8 @@ The map state
 - [groups](interfaces.LeafletControllerState.md#groups)
 - [isReady](interfaces.LeafletControllerState.md#isready)
 - [markers](interfaces.LeafletControllerState.md#markers)
+- [polygons](interfaces.LeafletControllerState.md#polygons)
+- [polylines](interfaces.LeafletControllerState.md#polylines)
 - [userPosition](interfaces.LeafletControllerState.md#userposition)
 - [zoom](interfaces.LeafletControllerState.md#zoom)
 
@@ -27,19 +29,19 @@ Can the controller use the user geolocation features
 
 #### Defined in
 
-[interfaces.ts:54](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L54)
+[interfaces.ts:85](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L85)
 
 ___
 
 ### groups
 
-• **groups**: `Record`<`string`, [`MarkerControllerGroup`](interfaces.MarkerControllerGroup.md)\>
+• **groups**: `Record`<`string`, [`ControllerGroup`](interfaces.ControllerGroup.md)\>
 
-The [MarkerControllerGroup](interfaces.MarkerControllerGroup.md) groups present on the map
+The [ControllerGroup](interfaces.ControllerGroup.md) groups present on the map
 
 #### Defined in
 
-[interfaces.ts:48](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L48)
+[interfaces.ts:75](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L75)
 
 ___
 
@@ -51,7 +53,7 @@ The map ready state
 
 #### Defined in
 
-[interfaces.ts:52](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L52)
+[interfaces.ts:83](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L83)
 
 ___
 
@@ -59,11 +61,35 @@ ___
 
 • **markers**: `Record`<`string`, [`MarkerController`](interfaces.MarkerController.md)\>
 
-The [MarkerController](interfaces.MarkerController.md) groups present on the map
+The [MarkerController](interfaces.MarkerController.md) present on the map
 
 #### Defined in
 
-[interfaces.ts:50](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L50)
+[interfaces.ts:77](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L77)
+
+___
+
+### polygons
+
+• **polygons**: `Record`<`string`, [`PolygonController`](interfaces.PolygonController.md)\>
+
+The [PolygonController](interfaces.PolygonController.md) present on the map
+
+#### Defined in
+
+[interfaces.ts:81](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L81)
+
+___
+
+### polylines
+
+• **polylines**: `Record`<`string`, [`PolylineController`](interfaces.PolylineController.md)\>
+
+The [PolylineController](interfaces.PolylineController.md)  present on the map
+
+#### Defined in
+
+[interfaces.ts:79](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L79)
 
 ___
 
@@ -75,7 +101,7 @@ The current user position
 
 #### Defined in
 
-[interfaces.ts:56](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L56)
+[interfaces.ts:87](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L87)
 
 ___
 
@@ -87,4 +113,4 @@ The current zoom level
 
 #### Defined in
 
-[interfaces.ts:46](https://github.com/synw/leaflet-controller/blob/4e36a5e/src/interfaces.ts#L46)
+[interfaces.ts:73](https://github.com/synw/leaflet-controller/blob/653db9e/src/interfaces.ts#L73)
