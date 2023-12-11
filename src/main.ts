@@ -8,6 +8,7 @@ import {
   PolylineControllerParams,
   PolygonControllerParams,
   ControllerType,
+  MapController,
 } from "./interfaces";
 import useMapController from "./use_map_controller";
 import useMarkerController from "./use_marker_controller";
@@ -25,6 +26,7 @@ export {
   PolylineControllerParams,
   PolygonControllerParams,
   ControllerType,
+  MapController,
   useMapController,
   useMarkerController,
   useControllerGroup,

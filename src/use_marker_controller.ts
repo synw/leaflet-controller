@@ -13,13 +13,25 @@ const useMarkerController = (params: MarkerControllerParams): MarkerController =
   let _iconSvg = params?.iconSvg ?? '';
   let _svgClass = params?.svgCls ?? '';
 
+  const html = (data: string) => {
+    _iconOptions.html = data;
+    marker.setIcon(L.divIcon(_iconOptions))
+  }
+
   const cls = (cls: string) => {
     _iconOptions.className = cls;
     marker.setIcon(L.divIcon(_iconOptions))
   }
 
+  const removeCls = (cls: string) => {
+    const _li = (_iconOptions.className ?? "").split(" ");
+    const _nli = _li.filter(obj => obj !== cls)
+    _iconOptions.className = _nli.join(" ");
+    marker.setIcon(L.divIcon(_iconOptions))
+  }
+
   const addToCls = (cls: string) => {
-    _iconOptions.className = cls;
+    _iconOptions.className += " " + cls;
     marker.setIcon(L.divIcon(_iconOptions))
   }
 
@@ -48,8 +60,16 @@ const useMarkerController = (params: MarkerControllerParams): MarkerController =
     name,
     type,
     marker,
+    get iconOptions(): L.DivIconOptions {
+      return _iconOptions
+    },
+    set iconOptions(options: L.DivIconOptions) {
+      _iconOptions = options
+    },
+    html,
     cls,
     addToCls,
+    removeCls,
     svgCls,
     addToSvgCls
   }

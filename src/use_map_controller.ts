@@ -40,6 +40,7 @@ function useMapController(): MapController {
 
   const _setLocate = (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: (e: L.ErrorEvent) => void) => {
     _map.on('locationfound', (e) => {
+      //console.log("USERPOS", JSON.stringify(e, null, "  "))
       state.userPosition = e;
       state.canGeolocate = true;
       _onLocationFound(e);
@@ -62,6 +63,10 @@ function useMapController(): MapController {
   const setLocate = (onLocationUpdate?: (e: L.LocationEvent) => void, onLocationError?: (e: L.ErrorEvent) => void) => {
     _map.stopLocate();
     _setLocate(onLocationUpdate, onLocationError);
+  }
+
+  const removePositionMaker = () => {
+    _positionMarker.removeFrom(_map);
   }
 
   const resize = () => {
@@ -155,9 +160,9 @@ function useMapController(): MapController {
     delete state.polygons[name]
   }
 
-  const fitUserLatlng = (latlng: L.LatLngTuple) => {
+  const fitUserLatlng = (bounds: Array<L.LatLngTuple>, options: L.FitBoundsOptions = {}) => {
     if (state.canGeolocate && state.userPosition) {
-      _map.fitBounds([latlng, [state.userPosition.latlng.lat, state.userPosition.latlng.lng]])
+      _map.fitBounds([...bounds, [state.userPosition.latlng.lat, state.userPosition.latlng.lng]], options)
     } else {
       console.log("Can not fit bounds: no known user position")
     }
@@ -198,6 +203,7 @@ function useMapController(): MapController {
     removePolylineController,
     addPolygonController,
     removePolygonController,
+    removePositionMaker,
     addGroup,
     removeGroup,
     clearMapGroups,

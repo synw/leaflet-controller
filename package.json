@@ -1,6 +1,6 @@
 {
   "name": "leaflet-controller",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "A stateful map controller for Leaflet",
   "repository": "https://github.com/synw/leaflet-controller",
   "scripts": {
@@ -10,17 +10,17 @@
     "docs": "typedoc --entryPointStrategy expand"
   },
   "peerDependencies": {
-    "leaflet": "^1.8.0"
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
-    "@types/leaflet": "^1.7.11",
-    "@types/node": "^16.10.2",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "typedoc": "^0.23.5",
-    "typedoc-plugin-markdown": "^3.13.2",
-    "typedoc-plugin-rename-defaults": "^0.6.1",
-    "typescript": "^4.4.3",
-    "vite": "^2.6.2"
+    "@types/leaflet": "^1.9.8",
+    "@types/node": "^20.10.4",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typedoc": "^0.25.4",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typedoc-plugin-rename-defaults": "^0.7.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.7"
   },
   "files": [
     "dist"

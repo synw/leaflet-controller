@@ -28,8 +28,11 @@ interface MarkerControllerParams {
 
 interface MarkerController extends BaseController {
   marker: L.Marker | L.CircleMarker;
+  iconOptions: L.DivIconOptions;
+  html: (data: string) => void;
   cls: (cls: string) => void;
   addToCls: (cls: string) => void;
+  removeCls: (cls: string) => void;
   svgCls: (cls: string) => void;
   addToSvgCls: (cls: string) => void;
 }
@@ -113,12 +116,14 @@ interface MapController {
   addPolygonController: (c: PolygonController) => void
   /** Remove a polygon controller */
   removePolygonController: (name: string) => void
+  /** Remove the position marker */
+  removePositionMaker: () => void
   /** Add a marker controller group */
   addGroup: (group: ControllerGroup) => void;
   /** Remove a marker controller group */
   removeGroup: (name: string) => void;
-  /** Fit bounds for given coordinates and user position */
-  fitUserLatlng: (latlng: L.LatLngTuple) => void;
+  /** Fit bounds for given coordinates list and user position */
+  fitUserLatlng: (bounds: Array<L.LatLngTuple>) => void;
   /** Calculate the distance from given coordinates to the user position */
   distanceFromUser: (latlng: L.LatLng) => number;
   /** Set the on location update callback */
