@@ -15,6 +15,11 @@ npm install leaflet-controller
 yarn add leaflet-controller
 ```
 
+## Doc and example
+
+- [Api doc](https://synw.github.io/leaflet-controller/api/)
+- [Example](https://synw.github.io/leaflet-controller/example/)
+
 ## Usage
 
 The map controller manages the state of the features on the map. The 
