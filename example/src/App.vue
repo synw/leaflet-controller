@@ -29,7 +29,8 @@ import { initNotifyService } from "@/services/notify";
 import { initDb } from "@sqlbro/client"
 
 onBeforeMount(() => {
-  const url = window.location.origin + "/assets/";
+  const url = window.location.origin + import.meta.env.BASE_URL + "assets/";
+  //console.log("URL", url);
   initDb(url)
 });
 onMounted(() => initNotifyService())
