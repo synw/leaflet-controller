@@ -1,0 +1,45 @@
+<template>
+  <div class="h-screen background">
+    <the-header class="h-16"></the-header>
+    <div class="flex flex-row w-full h-full">
+      <div class="background w-full">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
+  <Toast />
+  <ConfirmDialog>
+    <template #message="slotProps">
+      <div class="flex flex-row items-center p-4">
+        <!-- div>
+          <named-icon :icon="`${slotProps.message.icon}`" class="text-3xl"></named-icon>
+        </div -->
+        <div class="pl-2">{{ slotProps.message.message }}</div>
+      </div>
+    </template>
+  </ConfirmDialog>
+</template>
+
+<script setup lang="ts">
+import { onMounted, onBeforeMount } from 'vue';
+import TheHeader from "@/components/TheHeader.vue";
+import ConfirmDialog from "primevue/confirmdialog";
+import Toast from "primevue/toast";
+import { initNotifyService } from "@/services/notify";
+import { initDb } from "@sqlbro/client"
+
+onBeforeMount(() => {
+  const url = window.location.origin + "/assets/";
+  initDb(url)
+});
+onMounted(() => initNotifyService())
+</script>
+
+<style lang="sass">
+html, body
+   height: 100%
+</style>
+
+
+
+
